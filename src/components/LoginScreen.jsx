@@ -29,11 +29,14 @@ export default function LoginScreen() {
         style={{ textAlign: 'center', marginBottom: '40px' }}
       >
         <img 
-          src="/logo.png" 
+          src="/Logo_Nova.png" 
           alt="LANNE Logo" 
-          style={{ width: '80px', height: '80px', marginBottom: '16px' }} 
+          style={{ width: '90px', height: '90px', marginBottom: '16px', objectFit: 'contain' }} 
         />
-        <h1 style={{ fontSize: '28px', fontWeight: '900', color: '#1a1a2e', marginBottom: '8px' }}>LANNE</h1>
+        <h1 style={{ fontSize: '28px', fontWeight: '900', color: '#1a1a2e', marginBottom: '4px' }}>LANNE</h1>
+        <h2 style={{ fontSize: '13px', fontWeight: '700', color: '#4b2c7f', marginBottom: '16px', lineHeight: 1.4, padding: '0 20px' }}>
+          Liga Acadêmica de Neurologia e Neurocirurgia da Universidade Federal de Pernambuco
+        </h2>
         <p style={{ fontSize: '14px', color: '#6b5c85' }}>Selecione seu perfil para acessar o painel</p>
       </motion.div>
 
