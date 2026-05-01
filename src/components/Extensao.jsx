@@ -42,25 +42,31 @@ function CatBadge({ category }) {
   return <span style={{ fontSize: '10px', fontWeight: '700', color: c.color, background: c.bg, padding: '2px 8px', borderRadius: '99px' }}>{c.emoji} {c.label}</span>
 }
 
-/* ─── MODAL ───────────────────────────────────────── */
 function Modal({ title, onClose, children }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = 'unset' }
+  }, [])
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.45)', zIndex: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', boxSizing: 'border-box' }}
+      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', boxSizing: 'border-box', backdropFilter: 'blur(3px)' }}
       onClick={onClose}
     >
       <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
         transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-        style={{ background: 'white', borderRadius: '24px', padding: '24px', width: '100%', maxWidth: '400px', maxHeight: '85vh', overflowY: 'auto', boxSizing: 'border-box' }}
+        style={{ background: 'white', borderRadius: '24px', width: '100%', maxWidth: '360px', maxHeight: '75vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box', boxShadow: '0 10px 40px rgba(0,0,0,0.2)' }}
         onClick={e => e.stopPropagation()}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-          <h3 style={{ fontWeight: '800', fontSize: '17px', color: '#1a1a2e' }}>{title}</h3>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 24px 10px', flexShrink: 0, borderBottom: '1px solid #f0f0f0' }}>
+          <h3 style={{ fontWeight: '800', fontSize: '17px', color: '#1a1a2e', margin: 0 }}>{title}</h3>
           <button onClick={onClose} style={{ background: '#f3f4f6', border: 'none', borderRadius: '50%', width: '32px', height: '32px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <X size={16} />
           </button>
         </div>
-        {children}
+        <div style={{ padding: '20px 24px', overflowY: 'auto', flex: 1 }}>
+          {children}
+        </div>
       </motion.div>
     </motion.div>
   )
