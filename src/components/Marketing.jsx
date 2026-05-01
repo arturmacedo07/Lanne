@@ -71,7 +71,7 @@ function Modal({ title, onClose, children }) {
     >
       <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
         transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-        style={{ background: 'white', borderRadius: '24px', width: '100%', maxWidth: '360px', maxHeight: '75vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box', boxShadow: '0 10px 40px rgba(0,0,0,0.2)' }}
+        style={{ background: 'white', borderRadius: '24px', width: '90vw', maxWidth: '360px', height: '420px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box', boxShadow: '0 10px 40px rgba(0,0,0,0.2)' }}
         onClick={e => e.stopPropagation()}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 24px 10px', flexShrink: 0, borderBottom: '1px solid #f0f0f0' }}>
