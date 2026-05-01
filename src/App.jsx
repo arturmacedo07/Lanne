@@ -53,7 +53,7 @@ function AppContent() {
         alignItems: 'center'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
-          <img src="/favicon.svg" alt="LANNE" style={{ width: '44px', height: '44px' }} />
+          <img src="/logo_brain.png" alt="LANNE" style={{ width: '44px', height: '44px', mixBlendMode: 'multiply' }} />
           <div>
             <h1 style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: '800', lineHeight: 1.2 }}>{getHeaderTitle()}</h1>
             <p style={{ fontSize: '9px', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }}>LANNE</p>
