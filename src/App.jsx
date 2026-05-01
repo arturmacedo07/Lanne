@@ -52,9 +52,12 @@ function AppContent() {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <div style={{ flex: 1 }}>
-          <h1 style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: '800', lineHeight: 1.2 }}>{getHeaderTitle()}</h1>
-          <p style={{ fontSize: '10px', color: 'var(--text-muted)' }}>LANNE: Liga Acadêmica de Neurologia</p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1 }}>
+          <img src="/logo_ui.png" alt="LANNE" style={{ width: '36px', height: '36px', mixBlendMode: 'multiply' }} />
+          <div>
+            <h1 style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: '800', lineHeight: 1.2 }}>{getHeaderTitle()}</h1>
+            <p style={{ fontSize: '9px', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }}>LANNE</p>
+          </div>
         </div>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
