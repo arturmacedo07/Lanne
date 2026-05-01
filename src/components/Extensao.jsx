@@ -298,7 +298,7 @@ export default function Extensao() {
             </Field>
             <div style={{ display: 'flex', gap: '10px' }}>
               <Field label="Data *"><input type="date" style={inputStyle} value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} /></Field>
-              <Field label="Horário"><input style={inputStyle} placeholder="08:00 – 17:00" value={form.time} onChange={e => setForm(f => ({ ...f, time: e.target.value }))} /></Field>
+              <Field label="Horário"><input type="time" style={inputStyle} value={form.time} onChange={e => setForm(f => ({ ...f, time: e.target.value }))} /></Field>
             </div>
             <Field label="Local">
               <input style={inputStyle} placeholder="Ex: Auditório Central – UFPE" value={form.location} onChange={e => setForm(f => ({ ...f, location: e.target.value }))} />
