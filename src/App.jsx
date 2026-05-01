@@ -52,11 +52,11 @@ function AppContent() {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
-          <img src="/logo_brain.png" alt="LANNE" style={{ width: '44px', height: '44px', mixBlendMode: 'multiply' }} />
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img src="/Logo_Nova.png" alt="LANNE Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
           <div>
             <h1 style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: '800', lineHeight: 1.2 }}>{getHeaderTitle()}</h1>
-            <p style={{ fontSize: '9px', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }}>LANNE</p>
+            <p style={{ fontSize: '10px', color: 'var(--text-muted)' }}>LANNE: Liga Acadêmica de Neurologia</p>
           </div>
         </div>
         

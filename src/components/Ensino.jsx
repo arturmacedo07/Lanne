@@ -149,7 +149,14 @@ function ScaleCard({ scale }) {
   const interpretation = allFilled || filledCategories > 0 ? scale.interpret(totalScore) : null
 
   const handleSelect = (catId, score) => {
-    setSelections(prev => prev[catId] === score ? { ...prev, [catId]: undefined } : { ...prev, [catId]: score })
+    setSelections(prev => {
+      if (prev[catId] === score) {
+        const newSelections = { ...prev }
+        delete newSelections[catId]
+        return newSelections
+      }
+      return { ...prev, [catId]: score }
+    })
   }
 
   const reset = (e) => {
