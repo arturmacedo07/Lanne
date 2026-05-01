@@ -56,7 +56,7 @@ function AppContent() {
           <img src="/Logo_Nova.png" alt="LANNE Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
           <div>
             <h1 style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: '800', lineHeight: 1.2 }}>{getHeaderTitle()}</h1>
-            <p style={{ fontSize: '10px', color: 'var(--text-muted)' }}>LANNE: Liga Acadêmica de Neurologia</p>
+            <p style={{ fontSize: '10px', color: 'var(--text-muted)' }}>LANNE: Liga Acadêmica de Neurologia e Neurocirurgia</p>
           </div>
         </div>
         
