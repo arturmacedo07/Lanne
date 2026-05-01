@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, X, ChevronDown, ChevronUp, BookOpen, FileText, Clock, User, Tag, AlertCircle, CheckCircle2, Trash2 } from 'lucide-react'
 import { useUserStorage } from '../hooks/useUserStorage'
+import { createPortal } from 'react-dom'
 
 /* ─── HELPERS ─────────────────────────────────────── */
 const STATUS_CONFIG = {
@@ -57,9 +58,9 @@ function Modal({ title, onClose, children }) {
     return () => { document.body.style.overflow = 'unset' }
   }, [])
 
-  return (
+  const content = (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', boxSizing: 'border-box', backdropFilter: 'blur(3px)' }}
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', boxSizing: 'border-box', backdropFilter: 'blur(3px)' }}
       onClick={onClose}
     >
       <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
@@ -79,6 +80,8 @@ function Modal({ title, onClose, children }) {
       </motion.div>
     </motion.div>
   )
+
+  return createPortal(content, document.body)
 }
 
 function FormField({ label, children }) {
